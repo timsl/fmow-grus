@@ -59,12 +59,16 @@ def prepare_data(params):
         else:
             outDir = params.directories['test_data']
 
+
         print('Queuing sequences in: ' + currDir)
+        print(os.path.join(params.directories['dataset'], currDir))
         for root, dirs, files in tqdm(os.walk(os.path.join(params.directories['dataset'], currDir))):
+            print("lel")
             if len(files) > 0:
                 slashes = [i for i,ltr in enumerate(root) if ltr == '/']
                         
             for file in files:
+                print(file)
                 if file.endswith('_rgb.json'): #skip _msrgb images
                     task = partial(_process_file, file, slashes, root, isTrain, outDir, paramsDict)
                     futures.append(executor.submit(task))

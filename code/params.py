@@ -54,7 +54,7 @@ lstm_loss = 'categorical_crossentropy'
 
 #DIRECTORIES AND FILES
 directories = {}
-directories['dataset'] = '../../fmow_dataset'
+directories['dataset'] = '../data/fmow_dataset'
 directories['input'] = os.path.join('..', 'data', 'input')
 directories['output'] = os.path.join('..', 'data', 'output')
 directories['working'] = os.path.join('..', 'data', 'working')
